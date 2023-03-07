@@ -2,6 +2,13 @@
 html {
   background-color: #fff;
   -webkit-font-smoothing: antialiased;
+  transition: all 0.2s ease-out;
+}
+html[id='theme-dark-mode'] {
+  filter: invert(1) hue-rotate(180deg);
+}
+html[id='theme-dark-mode'] img {
+  filter: invert(1) hue-rotate(180deg);
 }
 body {
   color: rgba(0,0,0,0.9);
@@ -114,11 +121,11 @@ a:active {
 .page-top .information .nav_right_btn {
   float: left;
   padding-top: 5px;
-  margin-right: -10px;
+  margin-right: 0px;
 }
 .page-top .information .nav_right_btn li {
   display: initial;
-  padding-right: 40px;
+  padding-right: 30px;
 }
 .sidebar {
   width: 30%;
@@ -677,6 +684,24 @@ a.btn {
   }
   .page-top {
     width: 100%;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  .page-top .information {
+    background-color: #fff;
+    position: absolute;
+    right: 0;
+  }
+  .page-top .information .nav_right_btn {
+    display: none;
+  }
+  .page-top .information:hover .nav_right_btn {
+    display: block;
+  }
+  .page-top::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 2px;
   }
   .post-title h3 {
     line-height: 1.6;
